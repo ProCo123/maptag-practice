@@ -65,11 +65,48 @@ function initScene() {
 
     globe = BABYLON.MeshBuilder.CreateSphere("globe", { diameter: 20, segments: 128 }, scene);
 
+    // Create simple map texture
     const material = new BABYLON.StandardMaterial("globeMat", scene);
-material.diffuse = new BABYLON.Color3(0.2, 0.4, 0.8);
-material.emissiveColor = new BABYLON.Color3(0.3, 0.5, 0.9);
-material.specularColor = new BABYLON.Color3(0.2, 0.2, 0.2);
-material.emissiveTexture = new BABYLON.Texture("https://www.babylonjs-playground.com/textures/earth.jpg", scene);
+    const dynamicTexture = new BABYLON.DynamicTexture("mapTexture", 2048, scene);
+    const ctx = dynamicTexture.getContext("2d");
+
+    // Ocean blue
+    ctx.fillStyle = "#1a5f7a";
+    ctx.fillRect(0, 0, 2048, 2048);
+
+    // Land green/brown
+    ctx.fillStyle = "#3d7e3d";
+    
+    // Simplified continent shapes (approximate rectangles)
+    // North America
+    ctx.fillRect(100, 350, 280, 400);
+    // South America
+    ctx.fillRect(250, 800, 180, 500);
+    // Europe
+    ctx.fillRect(880, 250, 420, 350);
+    // Africa
+    ctx.fillRect(920, 550, 450, 700);
+    // Middle East
+    ctx.fillRect(1100, 450, 250, 300);
+    // Central Asia
+    ctx.fillRect(1200, 300, 400, 350);
+    // East Asia
+    ctx.fillRect(1600, 250, 350, 400);
+    // Southeast Asia
+    ctx.fillRect(1500, 650, 300, 250);
+    // India
+    ctx.fillRect(1250, 600, 150, 200);
+    // Australia
+    ctx.fillRect(1650, 1150, 250, 250);
+    // Greenland
+    ctx.fillRect(350, 150, 150, 200);
+    // New Zealand
+    ctx.fillRect(1850, 1300, 100, 150);
+
+    dynamicTexture.update();
+    material.emissiveTexture = dynamicTexture;
+    material.emissiveColor = new BABYLON.Color3(0.8, 0.8, 0.8);
+    material.diffuse = new BABYLON.Color3(0.6, 0.7, 0.8);
 
     globe.material = material;
 
@@ -149,7 +186,7 @@ function normalToLatLng(normal) {
 function checkAnswer(tapLat, tapLng) {
     const [correctLat, correctLng] = countryCoordinates[currentQuestion] || [0, 0];
     const distance = Math.sqrt(Math.pow(tapLat - correctLat, 2) + Math.pow(tapLng - correctLng, 2));
-    const tolerance = 12;
+    const tolerance = 25;
 
     const isCorrect = distance < tolerance;
 
