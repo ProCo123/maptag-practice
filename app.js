@@ -8,11 +8,11 @@ const countryData = {
     "Oceania": ["Australia", "Papua New Guinea", "New Zealand", "Fiji", "Solomon Islands", "Vanuatu", "Samoa", "Kiribati", "Micronesia", "Palau", "Nauru", "Tuvalu", "Marshall Islands"],
 };
 
+// Country coordinates in mercator projection (normalized 0-1)
 const countryCoordinates = {
-    "Canada": [56.1304, -106.3468], "United States": [37.0902, -95.7129], "Mexico": [23.6345, -102.5528], "Guatemala": [15.5, -90.2], "Belize": [17.25, -88.75], "Honduras": [15, -86.25], "El Salvador": [13.79, -88.90], "Nicaragua": [12.87, -85.21], "Costa Rica": [9.75, -83.75], "Panama": [8.67, -80.74], "Brazil": [-14.2350, -51.9253], "Argentina": [-38.4161, -63.6167], "Peru": [-9.1900, -75.0152], "Colombia": [4.5709, -74.2973], "Chile": [-35.6751, -71.5430], "Venezuela": [6.4238, -66.5897], "Ecuador": [-1.8312, -78.1834], "Bolivia": [-16.2902, -63.5887], "Paraguay": [-23.4425, -58.4438], "Uruguay": [-32.5228, -55.7658], "Guyana": [4.8604, -58.9302], "Suriname": [3.9193, -56.0278], "Russia": [61.5240, 105.3188], "Germany": [51.1657, 10.4515], "France": [46.2276, 2.2137], "United Kingdom": [55.3781, -3.4360], "Italy": [41.8719, 12.5674], "Spain": [40.4637, -3.7492], "Poland": [51.9194, 19.1451], "Netherlands": [52.1326, 5.2913], "Belgium": [50.5039, 4.4699], "Greece": [39.0742, 21.8243], "Portugal": [39.3999, -8.2245], "Sweden": [60.1282, 18.6435], "Norway": [60.4720, 8.4689], "Denmark": [56.2639, 9.5018], "Finland": [61.9241, 25.7482], "Ireland": [53.4129, -8.2439], "Austria": [47.5162, 14.5501], "Switzerland": [46.8182, 8.2275], "Czech Republic": [49.8175, 15.4730], "Hungary": [47.1625, 19.5033], "Romania": [45.9432, 24.9668], "Bulgaria": [42.7339, 25.4858], "Croatia": [45.1, 15.2], "Serbia": [44.0165, 21.0059], "Slovenia": [46.1512, 14.9955], "Slovakia": [48.6690, 19.6990], "Belarus": [53.7098, 27.9534], "Ukraine": [48.3794, 31.1656], "Moldova": [47.4116, 28.3699], "Iceland": [64.96, -19.02], "Egypt": [26.8206, 30.8025], "Nigeria": [9.0820, 8.6753], "Ethiopia": [9.1450, 40.4897], "Kenya": [-0.0236, 37.9062], "South Africa": [-30.5595, 22.9375], "Tanzania": [-6.3690, 34.8888], "Algeria": [28.0339, 1.6596], "Sudan": [12.8628, 30.8025], "Uganda": [1.3733, 32.2903], "Morocco": [31.7917, -7.0926], "Angola": [-11.6021, 13.2344], "Ghana": [7.3697, -5.3679], "Mozambique": [-18.6657, 35.5296], "Madagascar": [-18.7669, 46.8691], "Cameroon": [3.8480, 11.5021], "Niger": [17.6078, 8.6753], "Mali": [17.5707, -3.9962], "Burkina Faso": [12.2383, -1.5616], "Malawi": [-13.2543, 34.3015], "Zambia": [-13.1339, 27.8493], "Senegal": [14.4974, -14.4524], "Somalia": [5.1521, 46.1996], "Chad": [15.4730, 18.7322], "Zimbabwe": [-19.0154, 29.1549], "Ivory Coast": [7.5400, -5.5471], "Botswana": [-22.3285, 24.6849], "Namibia": [-22.9375, 18.6947], "Gabon": [-0.8037, 11.6045], "Lesotho": [-29.6100, 28.2336], "Guinea": [9.9456, -9.6966], "Mauritania": [21.0079, -10.9408], "Liberia": [6.4281, -9.4295], "Sierra Leone": [8.4606, -11.7799], "Togo": [6.1256, 1.2324], "Benin": [9.3077, 2.3158], "China": [35.8617, 104.1954], "India": [20.5937, 78.9629], "Indonesia": [-0.7893, 113.9213], "Pakistan": [30.3753, 69.3451], "Bangladesh": [23.6850, 90.3563], "Japan": [36.2048, 138.2529], "Philippines": [12.8797, 121.7740], "Vietnam": [14.0583, 108.2772], "Turkey": [38.9637, 35.2433], "Iran": [32.4279, 53.6880], "Thailand": [15.8700, 100.9925], "Myanmar": [21.9162, 95.9560], "South Korea": [35.9078, 127.7669], "Iraq": [33.2232, 43.6793], "Afghanistan": [33.9391, 67.7099], "Saudi Arabia": [23.8859, 45.0792], "Uzbekistan": [41.3775, 64.5853], "Malaysia": [4.2105, 101.6964], "Nepal": [28.3949, 84.1240], "Yemen": [15.4730, 48.5164], "North Korea": [40.3399, 127.5101], "Sri Lanka": [7.8731, 80.7718], "Kazakhstan": [48.0196, 66.9237], "Syria": [34.8021, 38.9968], "Cambodia": [12.5657, 104.9910], "Jordan": [30.5852, 36.2384], "Azerbaijan": [40.1431, 47.5769], "UAE": [23.4241, 53.8478], "Tajikistan": [38.8610, 71.2761], "Israel": [31.0461, 34.8516], "Laos": [19.8523, 102.4955], "Lebanon": [33.8547, 35.8623], "Kyrgyzstan": [41.5015, 74.6671], "Turkmenistan": [38.9697, 59.5563], "Palestine": [31.9454, 35.2338], "Oman": [21.4735, 55.9754], "Kuwait": [29.3117, 47.4818], "Georgia": [42.3154, 43.3569], "Mongolia": [46.8625, 103.8467], "Armenia": [40.0691, 45.0382], "Qatar": [25.3548, 51.1839], "Bahrain": [26.0667, 50.5577], "East Timor": [-8.8383, 125.9181], "Cyprus": [34.9249, 33.4299], "Bhutan": [27.5142, 90.4336], "Maldives": [3.2028, 73.2207], "Brunei": [4.5353, 114.7277], "Singapore": [1.3521, 103.8198], "Hong Kong": [22.3193, 114.1694], "Australia": [-25.2744, 133.7751], "Papua New Guinea": [-6.3150, 143.9555], "New Zealand": [-40.9006, 174.8860], "Fiji": [-17.7134, 178.0650], "Solomon Islands": [-9.6457, 160.1562], "Vanuatu": [-15.3767, 166.9592], "Samoa": [-13.7590, -172.1046], "Kiribati": [-3.3704, -168.7340], "Micronesia": [7.4256, 150.5508], "Palau": [7.3150, 134.4815], "Nauru": [-0.5228, 166.9315], "Tuvalu": [-7.1095, 177.6493], "Marshall Islands": [7.1315, 171.1845],
+    "Canada": [0.35, 0.25], "United States": [0.25, 0.35], "Mexico": [0.20, 0.45], "Guatemala": [0.19, 0.48], "Belize": [0.20, 0.47], "Honduras": [0.21, 0.49], "El Salvador": [0.20, 0.50], "Nicaragua": [0.20, 0.51], "Costa Rica": [0.19, 0.52], "Panama": [0.21, 0.54], "Brazil": [0.45, 0.60], "Argentina": [0.38, 0.75], "Peru": [0.32, 0.58], "Colombia": [0.28, 0.52], "Chile": [0.33, 0.72], "Venezuela": [0.32, 0.50], "Ecuador": [0.30, 0.55], "Bolivia": [0.36, 0.65], "Paraguay": [0.39, 0.68], "Uruguay": [0.42, 0.73], "Guyana": [0.44, 0.54], "Suriname": [0.45, 0.52], "Russia": [0.65, 0.25], "Germany": [0.52, 0.32], "France": [0.50, 0.34], "United Kingdom": [0.48, 0.30], "Italy": [0.54, 0.37], "Spain": [0.47, 0.36], "Poland": [0.55, 0.30], "Netherlands": [0.51, 0.31], "Belgium": [0.50, 0.31], "Greece": [0.57, 0.39], "Portugal": [0.45, 0.37], "Sweden": [0.55, 0.23], "Norway": [0.52, 0.22], "Denmark": [0.53, 0.28], "Finland": [0.58, 0.22], "Ireland": [0.46, 0.29], "Austria": [0.54, 0.32], "Switzerland": [0.51, 0.33], "Czech Republic": [0.54, 0.31], "Hungary": [0.56, 0.32], "Romania": [0.58, 0.33], "Bulgaria": [0.58, 0.35], "Croatia": [0.55, 0.34], "Serbia": [0.56, 0.34], "Slovenia": [0.54, 0.33], "Slovakia": [0.55, 0.31], "Belarus": [0.58, 0.29], "Ukraine": [0.59, 0.31], "Moldova": [0.59, 0.32], "Iceland": [0.43, 0.18], "Egypt": [0.59, 0.48], "Nigeria": [0.53, 0.52], "Ethiopia": [0.63, 0.51], "Kenya": [0.63, 0.56], "South Africa": [0.58, 0.70], "Tanzania": [0.62, 0.58], "Algeria": [0.52, 0.42], "Sudan": [0.60, 0.48], "Uganda": [0.62, 0.54], "Morocco": [0.48, 0.40], "Angola": [0.57, 0.63], "Ghana": [0.50, 0.53], "Mozambique": [0.64, 0.63], "Madagascar": [0.68, 0.65], "Cameroon": [0.54, 0.53], "Niger": [0.54, 0.47], "Mali": [0.48, 0.46], "Burkina Faso": [0.51, 0.49], "Malawi": [0.63, 0.61], "Zambia": [0.60, 0.64], "Senegal": [0.44, 0.48], "Somalia": [0.66, 0.52], "Chad": [0.56, 0.48], "Zimbabwe": [0.61, 0.66], "Ivory Coast": [0.49, 0.54], "Botswana": [0.60, 0.68], "Namibia": [0.57, 0.66], "Gabon": [0.56, 0.57], "Lesotho": [0.62, 0.70], "Guinea": [0.47, 0.51], "Mauritania": [0.48, 0.44], "Liberia": [0.48, 0.55], "Sierra Leone": [0.46, 0.53], "Togo": [0.51, 0.53], "Benin": [0.52, 0.52], "China": [0.72, 0.35], "India": [0.68, 0.45], "Indonesia": [0.77, 0.55], "Pakistan": [0.66, 0.40], "Bangladesh": [0.71, 0.42], "Japan": [0.82, 0.33], "Philippines": [0.79, 0.48], "Vietnam": [0.76, 0.45], "Turkey": [0.60, 0.38], "Iran": [0.62, 0.41], "Thailand": [0.74, 0.49], "Myanmar": [0.71, 0.46], "South Korea": [0.80, 0.36], "Iraq": [0.61, 0.42], "Afghanistan": [0.65, 0.39], "Saudi Arabia": [0.62, 0.48], "Uzbekistan": [0.64, 0.37], "Malaysia": [0.75, 0.51], "Nepal": [0.69, 0.41], "Yemen": [0.64, 0.52], "North Korea": [0.81, 0.34], "Sri Lanka": [0.71, 0.50], "Kazakhstan": [0.67, 0.33], "Syria": [0.60, 0.40], "Cambodia": [0.76, 0.47], "Jordan": [0.60, 0.43], "Azerbaijan": [0.62, 0.36], "UAE": [0.63, 0.50], "Tajikistan": [0.66, 0.38], "Israel": [0.59, 0.44], "Laos": [0.74, 0.46], "Lebanon": [0.59, 0.42], "Kyrgyzstan": [0.67, 0.36], "Turkmenistan": [0.64, 0.36], "Palestine": [0.59, 0.44], "Oman": [0.65, 0.51], "Kuwait": [0.62, 0.46], "Georgia": [0.61, 0.37], "Mongolia": [0.72, 0.32], "Armenia": [0.61, 0.37], "Qatar": [0.63, 0.49], "Bahrain": [0.63, 0.48], "East Timor": [0.79, 0.57], "Cyprus": [0.58, 0.41], "Bhutan": [0.71, 0.40], "Maldives": [0.70, 0.53], "Brunei": [0.77, 0.52], "Singapore": [0.75, 0.54], "Hong Kong": [0.78, 0.45], "Australia": [0.80, 0.68], "Papua New Guinea": [0.83, 0.60], "New Zealand": [0.87, 0.75], "Fiji": [0.88, 0.62], "Solomon Islands": [0.86, 0.59], "Vanuatu": [0.86, 0.63], "Samoa": [0.92, 0.60], "Kiribati": [0.92, 0.56], "Micronesia": [0.87, 0.48], "Palau": [0.85, 0.49], "Nauru": [0.86, 0.57], "Tuvalu": [0.91, 0.61], "Marshall Islands": [0.89, 0.47],
 };
 
-let scene, camera, globe, canvas, engine;
 let currentMode = "beginner";
 let currentContinent = "North America";
 let toLearn = [];
@@ -20,6 +20,8 @@ let learned = [];
 let resultShowing = false;
 let currentQuestion = "";
 let gameStarted = false;
+let mapElement = null;
+let lastPin = null;
 
 function selectMode(mode) {
     currentMode = mode;
@@ -39,51 +41,18 @@ function startGame() {
     gameStarted = true;
     document.getElementById("startModal").classList.add("hidden");
     loadCountries();
-    initScene();
+    initMap();
 }
 
 function resetGame() {
     gameStarted = false;
     document.getElementById("startModal").classList.remove("hidden");
-    if (engine) engine.dispose();
 }
 
-function initScene() {
-    canvas = document.getElementById("canvas");
-    engine = new BABYLON.Engine(canvas, true);
-    scene = new BABYLON.Scene(engine);
-
-    camera = new BABYLON.ArcRotateCamera("camera", 0, Math.PI / 2.5, 25, BABYLON.Vector3.Zero(), scene);
-    camera.attachControl(canvas, true);
-    camera.inertia = 0.7;
-    camera.angularSensibilityX = 400;
-    camera.angularSensibilityY = 400;
-    camera.wheelPrecision = 20;
-
-    const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
-    light.intensity = 1;
-
-    globe = BABYLON.MeshBuilder.CreateSphere("globe", { diameter: 20, segments: 128 }, scene);
-
-    const material = new BABYLON.StandardMaterial("globeMat", scene);
-    material.diffuse = new BABYLON.Color3(0.3, 0.6, 0.9);
-    material.emissiveColor = new BABYLON.Color3(0.4, 0.7, 1.0);
-    material.specularColor = new BABYLON.Color3(0.2, 0.2, 0.2);
-
-    globe.material = material;
-
-    canvas.addEventListener("click", onCanvasTap);
-    canvas.addEventListener("touchend", onCanvasTap);
-
+function initMap() {
+    mapElement = document.getElementById("map");
+    mapElement.addEventListener("click", onMapClick);
     showNextQuestion();
-
-    engine.runRenderLoop(() => {
-        scene.render();
-    });
-
-    window.addEventListener("resize", () => {
-        engine.resize();
-    });
 }
 
 function setupStartModal() {
@@ -117,6 +86,7 @@ function showNextQuestion() {
     updateProgress();
     resultShowing = false;
     document.getElementById("result").classList.remove("show");
+    if (lastPin) lastPin.remove();
 }
 
 function updateProgress() {
@@ -128,35 +98,40 @@ function updateProgress() {
     document.getElementById("stats").textContent = `Learned: ${learned.length}\nRemaining: ${toLearn.length}`;
 }
 
-function onCanvasTap(event) {
+function onMapClick(event) {
     if (resultShowing || toLearn.length === 0) return;
 
-    const pickResult = scene.pick(event.clientX, event.clientY, (mesh) => mesh === globe);
-    if (!pickResult || !pickResult.hit) return;
+    const rect = mapElement.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width;
+    const y = (event.clientY - rect.top) / rect.height;
 
-    const normal = pickResult.getNormal(true);
-    const [lat, lng] = normalToLatLng(normal);
-    checkAnswer(lat, lng);
+    checkAnswer(x, y);
+    showPin(x, y);
 }
 
-function normalToLatLng(normal) {
-    const lat = Math.asin(normal.y) * (180 / Math.PI);
-    const lng = Math.atan2(normal.x, normal.z) * (180 / Math.PI);
-    return [lat, lng];
+function showPin(x, y, isCorrect = false) {
+    if (lastPin) lastPin.remove();
+    lastPin = document.createElement("div");
+    lastPin.className = "pin" + (isCorrect ? " correct" : "");
+    lastPin.style.left = (x * 100) + "%";
+    lastPin.style.top = (y * 100) + "%";
+    mapElement.appendChild(lastPin);
 }
 
-function checkAnswer(tapLat, tapLng) {
-    const [correctLat, correctLng] = countryCoordinates[currentQuestion] || [0, 0];
-    const distance = Math.sqrt(Math.pow(tapLat - correctLat, 2) + Math.pow(tapLng - correctLng, 2));
-    const tolerance = 20;
+function checkAnswer(tapX, tapY) {
+    const [correctX, correctY] = countryCoordinates[currentQuestion] || [0.5, 0.5];
+    const distance = Math.sqrt(Math.pow(tapX - correctX, 2) + Math.pow(tapY - correctY, 2));
+    const tolerance = 0.08;
 
     const isCorrect = distance < tolerance;
 
     if (isCorrect) {
         toLearn = toLearn.filter(c => c !== currentQuestion);
         learned.push(currentQuestion);
+        showPin(correctX, correctY, true);
         showResult(true);
     } else {
+        showPin(correctX, correctY, false);
         showResult(false);
     }
 }
