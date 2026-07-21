@@ -66,7 +66,10 @@ function initScene() {
     globe = BABYLON.MeshBuilder.CreateSphere("globe", { diameter: 20, segments: 128 }, scene);
 
     const material = new BABYLON.StandardMaterial("globeMat", scene);
-    material.diffuseTexture = new BABYLON.Texture("https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg", scene);
+material.diffuse = new BABYLON.Color3(0.2, 0.4, 0.8);
+material.emissiveColor = new BABYLON.Color3(0.3, 0.5, 0.9);
+material.specularColor = new BABYLON.Color3(0.2, 0.2, 0.2);
+material.emissiveTexture = new BABYLON.Texture("https://www.babylonjs-playground.com/textures/earth.jpg", scene);
 
     globe.material = material;
 
